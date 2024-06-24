@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --font-family: "Roboto", sans-serif;
+  --mainColor: #f5f5f4;
+  --secondaryColor: #5e62c6;
+  --textColor: #d4d4d4;
+  --errorMessage: #ef4444;
+  --sucessColor: #16a34a;
+}
+
+body {
+  background-color: var(--secondaryColor);
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  padding: 20px;
+  background-color: var(--mainColor);
+  width: 100%;
+  margin: auto;
+}
+
+.add-todo {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  margin: auto;
+  border-radius: 15px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  background-color: rgba(14, 13, 13, 0.486);
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 5px;
+  gap: 5px;
+  position: relative;
+}
+
+.add-input {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: rgba(31, 31, 32, 0.459);
+  color: var(--textColor);
+  opacity: 80%;
+  font-size: 18px;
+  font-family: var(--font-family);
+}
+
+small {
+  color: var(--textColor);
+  opacity: 0.8; /* Using 0.8 instead of 80% for correct opacity syntax */
+  font-size: 13px;
+  padding-top: 2px;
+  transition: opacity 0.9s ease-out; /* Add transitions for opacity */
+  left: 0;
+}
+
+.add-button {
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  margin-top: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 5px;
+  font-size: 17px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: transform 0.3s ease-out; /* Add transition for the button */
+  background: var(--secondaryColor);
+  color: var(--textColor);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+.input-container:focus-within small {
+  opacity: 0; /* Fade out when input is focused */
+}
+
+.input-container:focus-within .add-button {
+  transform: translateY(-5px); /* Move the button up when input is focused */
+}
+
+.add-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.no-task {
+  color: var(--textColor);
+  font-size: 25px;
+}
+
+.task-update {
+  color: var(--sucessColor);
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 0px;
+  text-transform: capitalize;
+  font-style: italic;
+}
+.task-list {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+  margin: auto;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  background-color: rgba(14, 13, 13, 0.486);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+li {
+  list-style: none;
+}
+
+.todo-container {
+  padding: 10px;
+  margin: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: rgba(94, 97, 198, 0.425);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+label {
+  display: flex;
+  margin: auto;
+  gap: 10px;
+  align-items: center;
+  color: var(--textColor);
+}
+
+.icon {
+  font-size: 22px;
+  color: var(--mainColor);
+  cursor: pointer;
+}
+.icon-delete {
+  font-size: 22px;
+  color: var(--errorMessage);
+  cursor: pointer;
+}
+
+.icon-delete:hover {
+  color: hwb(0 5% 1% / 0.753);
+}
+
+.todo-title {
+  border-radius: 10px;
+  padding: 5px;
+  padding-left: 10px;
+  border: none;
+  outline: none;
+  background: rgba(31, 31, 32, 0.459);
+  color: var(--textColor);
+  opacity: 80%;
+  font-size: 18px;
+  font-family: var(--font-family);
+}
+
+@media (max-width: 767px) {
+  .add-todo {
+    width: 100%;
+  }
+  .app-container {
+    padding: 30px;
+  }
+  .task-list {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
